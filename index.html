@@ -7,18 +7,83 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-      <main>
+    <main>
+      <div class="main-card">
         <h1 id="contact-title">Contact Us</h1>
-      <form id="contact-form" method="post" aria-labelledby="contact-title">
-        <div class="contact-card">
-            <label for="">First Name</label>
-            <input type="text" id="first-name" required="required" label="first-name">
-        </div>
+        <form id="contact-form" method="post" aria-labelledby="contact-title">
+          <div class="contact-name flex-row">
+            <label for="">First Name *</label>
+            <input
+              class="contact-text"
+              type="text"
+              id="first-name"
+              name="name"
+              label="first-name"
+              required
+            />
+            <label for="">Last Name *</label>
+            <input
+              class="contact-text"
+              type="text"
+              id="last-name"
+              name="name"
+              label="last-name"
+              required
+            />
+          </div>
 
-        <div class="actions">
-          <!-- הכפתור ייכנס בהמשך -->
-        </div>
-      </form>
+          <div class="contact-email flex-column">
+            <label class="email" for="email">Email Address *</label>
+            <input
+              class="contact-text"
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="contact-query flex-row">
+            <label for="">Query Type *</label>
+            <div class="options">
+              <input
+                class="query"
+                type="checkbox"
+                id="query"
+                placeholder="Genral Enquiry"
+                required
+              />
+              <label class="query">Genral Enquiry</label>
+            </div>
+            <div class="options">
+              <input
+                class="query"
+                type="checkbox"
+                id="query"
+                placeholder="Support Request"
+                required
+              />
+              <label class="query">Support Request</label>
+            </div>
+          </div>
+
+          <div class="contact-message flex-column">
+            <label for="">Message *</label>
+            <input class="message" type="text" id="message" />
+          </div>
+
+          <div class="contact-cheackbox">
+            <input type="checkbox" name="" id="" />
+            <label>I consent to being contacted by the team *</label>
+          </div>
+
+          <div class="contact-submit">
+            <button>Submit</button>
+          </div>
+          
+        </form>
+      </div>
     </main>
   </body>
 </html>

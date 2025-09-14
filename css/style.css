@@ -1,4 +1,21 @@
 body {
-    background-color: var(--green-200);
+  background-color: var(--green-200);
 }
 
+.main-card {
+  background-color: var(--white);
+  max-width: 736px;
+  margin: 0 auto;
+  padding: var(--space-500);
+}
+
+.options {
+    border: 1px solid black;
+    max-width: 320px;
+    border-radius: 8px;
+    gap: var(--space-200);
+}
+
+.message {
+    height: 137px ;
+}
