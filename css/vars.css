@@ -1,0 +1,93 @@
+:root {
+  /* Greys */
+  --grey-900: #2a4144;
+  --grey-500: #86a2a5;
+
+  /* Neutrals */
+  --white: #ffffff;
+
+  /* Greens */
+  --green-600: #0c7d69;
+  --green-200: #e0f1e8;
+
+  /* Reds */
+  --red-500: #d73c3c; /* Errors */
+
+  /* Spacing scale */
+  --space-100: 0.5rem; /* 8px  */
+  --space-150: 0.75rem; /* 12px */
+  --space-200: 1rem; /* 16px */
+  --space-300: 1.5rem; /* 24px */
+  --space-400: 2rem; /* 32px */
+  --space-500: 2.5rem; /* 40px */
+  --space-1600: 8rem; /* 128px */
+
+  /* Typography  */
+  --ff-base: 'Karla', system-ui, sans-serif;
+
+  /* Heading */
+  --heading-size: 2rem; /* 32px */
+  --heading-weight: 700; /* Bold */
+  --heading-line-height: 1; /* 100% */
+  --heading-letter-spacing: -0.0625rem; /* -1px */
+
+  /* Body MD (Bold) */
+  --body-md-bold-size: 1.125rem; /* 18px */
+  --body-md-bold-weight: 700; /* Bold */
+  --body-md-bold-line-height: 1.5; /* 150% */
+  --body-md-bold-spacing: 0;
+
+  /* Body MD (Regular) */
+  --body-md-regular-size: 1.125rem; /* 18px */
+  --body-md-regular-weight: 400; /* Regular */
+  --body-md-regular-line-height: 1.5; /* 150% */
+  --body-md-regular-spacing: 0;
+
+  /* Body SM */
+  --body-sm-size: 1rem; /* 16px */
+  --body-sm-weight: 400; /* Regular */
+  --body-sm-line-height: 1.5; /* 150% */
+  --body-sm-spacing: 0;
+}
+
+/* -------------------- */
+
+/* Fonts  */
+
+/* Karla Variable (Normal) */
+@font-face {
+  font-family: 'Karla';
+  src: url('/assets/fonts/Karla-VariableFont_wght.ttf')
+    format('truetype-variations');
+  font-weight: 200 800; /* תומך בכל הטווח */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Karla Variable (Italic) */
+@font-face {
+  font-family: 'Karla';
+  src: url('/assets/fonts/Karla-Italic-VariableFont_wght.ttf')
+    format('truetype-variations');
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Karla Regular (Static) */
+@font-face {
+  font-family: 'Karla';
+  src: url('/assets/fonts/Karla-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Karla Bold (Static) */
+@font-face {
+  font-family: 'Karla';
+  src: url('/assets/fonts/Karla-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
