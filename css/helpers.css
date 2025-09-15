@@ -7,3 +7,21 @@
     flex-direction: column;
 }
 
+
+.mb-300 {
+    margin-bottom: var(--space-300);
+}
+.mb-500 {
+    margin-bottom: var(--space-500);
+}
+.mt-500 {
+    margin-top: var(--space-500);
+}
+
+span {
+    color: var(--green-600);
+}
+
+.contact-title, .name, .email, .query, .label-checkbox, .label-message {
+  color: var(--grey-900);
+}

@@ -11,79 +11,93 @@
       <div class="main-card">
         <h1 id="contact-title">Contact Us</h1>
         <form id="contact-form" method="post" aria-labelledby="contact-title">
-          <div class="contact-name flex-row">
-            <label for="">First Name *</label>
-            <input
-              class="contact-text"
-              type="text"
-              id="first-name"
-              name="name"
-              label="first-name"
-              required
-            />
-            <label for="">Last Name *</label>
-            <input
-              class="contact-text"
-              type="text"
-              id="last-name"
-              name="name"
-              label="last-name"
-              required
-            />
+          <div class="contact-name flex-row mb-300">
+            <div class="flex-column">
+              <label for="first-name" class="name"
+                >First Name<span>*</span></label
+              >
+              <input
+                autocomplete="given-name"
+                class="contact-text"
+                type="text"
+                id="first-name"
+                name="firstName"
+              />
+            </div>
+
+            <div class="flex-column">
+              <label for="last-name" class="name"
+                >Last Name <span>*</span></label
+              >
+              <input
+                class="contact-text"
+                type="text"
+                id="last-name"
+                name="lastName"
+              />
+            </div>
           </div>
 
-          <div class="contact-email flex-column">
-            <label class="email" for="email">Email Address *</label>
+          <div class="contact-email flex-column mb-300">
+            <label class="email" for="email"
+              >Email Address <span>*</span></label
+            >
             <input
-              class="contact-text"
+              placeholder="email@example.com"
+              class="contact-email"
               id="email"
               name="email"
               type="email"
               autocomplete="email"
-              required
             />
           </div>
 
-          <div class="contact-query flex-row">
-            <label for="">Query Type *</label>
+          <div class="contact-query flex-column mb-300">
+            <label class="query">Query Type <span>*</span></label>
             <div class="options">
               <input
-                class="query"
-                type="checkbox"
-                id="query"
-                placeholder="Genral Enquiry"
-                required
+                type="radio"
+                id="query-general"
+                name="queryType"
+                value="general"
               />
-              <label class="query">Genral Enquiry</label>
-            </div>
-            <div class="options">
+              <label for="query-general" class="pill">General Enquiry</label>
+
               <input
-                class="query"
-                type="checkbox"
-                id="query"
-                placeholder="Support Request"
-                required
+                type="radio"
+                id="query-support"
+                name="queryType"
+                value="support"
               />
-              <label class="query">Support Request</label>
+              <label for="query-support" class="pill">Support Request</label>
             </div>
           </div>
 
-          <div class="contact-message flex-column">
-            <label for="">Message *</label>
-            <input class="message" type="text" id="message" />
+          <div class="contact-message flex-column mb-300">
+            <label for="message" class="label-message"
+              >Message<span>*</span></label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              class="message"
+            ></textarea>
           </div>
 
-          <div class="contact-cheackbox">
+          <div class="contact-cheackbox mb-500 mt-500">
             <input type="checkbox" name="" id="" />
-            <label>I consent to being contacted by the team *</label>
+            <label class="label-checkbox"
+              >I consent to being contacted by the team <span>*</span></label
+            >
           </div>
 
           <div class="contact-submit">
-            <button>Submit</button>
+            <button type="submit" class="btn">Submit</button>
           </div>
-          
         </form>
       </div>
     </main>
+    <script src="js/main.js"></script>
   </body>
 </html>
