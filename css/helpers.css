@@ -8,6 +8,10 @@
 }
 
 
+.gap-100 {
+    gap: var(--space-100);
+}
+
 .mb-300 {
     margin-bottom: var(--space-300);
 }

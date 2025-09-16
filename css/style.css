@@ -36,11 +36,12 @@ textarea:focus-visible {
   padding: var(--space-500);
   border-radius: 16px;
 }
+
 .name,
 .email,
 .label-message,
 .query {
-  display: inline-block;
+  display: inline-flex;
   margin-bottom: 8px;
 }
 
@@ -67,11 +68,6 @@ textarea:focus-visible {
   gap: var(--space-300);
 }
 
-.contact-query {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
 
 /* query  */
 
@@ -89,26 +85,37 @@ textarea:focus-visible {
 }
 
 .pill {
-  display: inline-flex;
+  display: flex;           /* במקום inline-flex */
+  width: 100%;
   align-items: center;
   gap: var(--space-200);
   min-height: 51px;
   padding: 0 var(--space-300);
-  border: 1px solid hsl(186 15% 59% / 0.45);
+  box-sizing: border-box;
+  border: 1px solid hsl(186 15% 59% / .45);
   border-radius: 8px;
   background: var(--white);
   color: var(--grey-900);
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
+  transition: background .15s, border-color .15s;
 }
 
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* שווה-שווה */
+  gap: var(--space-500);
+  width: 100%;
+}
+
+/* האיקון שיהיה עיגול ולא אליפסה */
 .pill::before {
-  content: '';
-  inline-size: 30px;
-  block-size: 20px;
-  border: 2px solid hsl(186 15% 59% / 0.9);
+  content: "";
+  inline-size: 18px;
+  block-size: 18px;
+  border: 2px solid hsl(186 15% 59% / .9);
   border-radius: 50%;
   box-sizing: border-box;
+  flex: 0 0 auto;
 }
 
 /* נבחר */
@@ -165,14 +172,50 @@ textarea:focus-visible {
 /* ///////////////////////////////////////////////////////////////*/
 
 @media (max-width: 640px) {
+  .main-card {
+    margin: var(--space-400) var(--space-200);
+    padding: var(--space-400);
+    border-radius: 12px;
+  }
+
+  #contact-title {
+    margin-bottom: var(--space-300);
+  }
+
   .contact-name {
     grid-template-columns: 1fr;
+    gap: var(--space-200);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    font-size: 16px;
   }
 
   .options {
     grid-template-columns: 1fr;
+    gap: var(--space-200);
   }
-  .contact-name {
-    grid-template-columns: 1fr;
+  .pill {
+    width: 100%;
+    min-height: 48px;
+    justify-content: flex-start; 
+  }
+
+  .message {
+    min-height: 120px; 
+  }
+
+  .contact-cheackbox {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-150);
+  }
+
+  .btn {
+    height: 56px;
+    margin-top: var(--space-300);
   }
 }
