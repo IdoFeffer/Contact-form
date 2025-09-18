@@ -12,7 +12,8 @@
     gap: var(--space-100);
 }
 
-
+/* -----------------------------------------------------  */
+/* Marign botoom class  */
 .mb-200 {
     margin-bottom: var(--space-200);
 }
@@ -26,6 +27,10 @@
     margin-bottom: var(--space-500);
 }
 
+/* Margin top class  */
+.mt-200 {
+    margin-top: var(--space-200);
+}
 .mt-300 {
     margin-top: var(--space-300);
 }
@@ -35,6 +40,7 @@
 .mt-500 {
     margin-top: var(--space-500);
 }
+/* -----------------------------------------------------  */
 
 span {
     color: var(--green-600);

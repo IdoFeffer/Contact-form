@@ -26,13 +26,13 @@ textarea:focus-visible {
   border-color: var(--green-600);
 }
 
-input[type="checkbox"]{
+input[type='checkbox'] {
   border: 1px solid var(--grey-500);
-  accent-color: var(--green-600);   
+  accent-color: var(--green-600);
 }
 
-input[type="checkbox"]:focus-visible{
-  outline: 2px solid rgba(12,125,105,.35);
+input[type='checkbox']:focus-visible {
+  outline: 2px solid rgba(12, 125, 105, 0.35);
   outline-offset: 2px;
 }
 
@@ -179,7 +179,6 @@ input[type="checkbox"]:focus-visible{
   border-color: var(--red-500);
   box-shadow: 0 0 0 1px var(--red-500) inset;
 }
-/* לא לצבוע checkbox/radio באדום */
 form.was-validated input:is([type='checkbox'], [type='radio']):invalid {
   border-color: initial;
   box-shadow: none;
@@ -195,7 +194,7 @@ form.was-validated input:is([type='checkbox'], [type='radio']):invalid {
 /* Toast base (hidden) */
 #toast {
   position: fixed;
-  top: var(--space-400);            /* מרחק מלמעלה */
+  top: var(--space-400);
   left: 50%;
   transform: translateX(-50%) translateY(-8px);
   max-width: 560px;
@@ -204,11 +203,11 @@ form.was-validated input:is([type='checkbox'], [type='radio']):invalid {
   border-radius: 14px;
   background: var(--grey-900);
   color: var(--white);
-  box-shadow: 0 6px 30px rgba(0,0,0,.15);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
   opacity: 0;
   pointer-events: none;
-  transition: opacity .22s ease, transform .22s ease;
-  z-index: 999;                     /* מעל הכל */
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  z-index: 999;
 }
 
 #toast .toast__title {
@@ -220,7 +219,7 @@ form.was-validated input:is([type='checkbox'], [type='radio']):invalid {
 #toast .toast__text {
   font-size: var(--body-sm-size);
   line-height: var(--body-sm-line-height);
-  opacity: .95;
+  opacity: 0.95;
 }
 
 /* visible state */
@@ -235,17 +234,12 @@ form.was-validated input:is([type='checkbox'], [type='radio']):invalid {
 @media (max-width: 640px) {
   .main-card {
     margin: var(--space-400) var(--space-200);
-    padding: var(--space-400);
-    border-radius: 12px;
-  }
-
-  #contact-title {
-    margin-bottom: var(--space-300);
+    padding: var(--space-300) var(--space-200);
   }
 
   .contact-name {
     grid-template-columns: 1fr;
-    gap: var(--space-200);
+    gap: var(--space-300);
   }
 
   input[type='text'],
@@ -270,13 +264,18 @@ form.was-validated input:is([type='checkbox'], [type='radio']):invalid {
   }
 
   .contact-cheackbox {
-    display: flex;
     align-items: flex-start;
     gap: var(--space-150);
   }
 
   .btn {
-    height: 56px;
-    margin-top: var(--space-300);
+    height: 59px;
+  }
+
+  #contact-title {
+    margin-bottom: var(--space-300);
+  }
+  #toast {
+    width: 260px;
   }
 }
