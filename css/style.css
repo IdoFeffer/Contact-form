@@ -41,6 +41,7 @@ input[type='checkbox']:focus-visible {
 .main-card {
   background-color: var(--white);
   max-width: 736px;
+  height: 783px;
   margin: var(--space-500) auto 0;
   padding: var(--space-500);
   border-radius: 16px;
