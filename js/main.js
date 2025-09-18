@@ -1,22 +1,24 @@
-'use strict';
+const form = document.getElementById('contact-form')
+const toast = document.getElementById('toast')
 
-const form = document.getElementById('contact-form');
+function showToast(ms = 3000) {
+  toast.classList.add('is-visible')
+  clearTimeout(showToast._t)
+  showToast._t = setTimeout(() => {
+    toast.classList.remove('is-visible')
+  }, ms)
+}
 
 form.addEventListener('submit', (e) => {
   if (!form.checkValidity()) {
-    e.preventDefault();               // אל תשלח אם יש שגיאות
-    form.classList.add('was-validated'); // מפעיל את חוקי ה-CSS
-  } else {
-    // אופציונלי: להסיר אם אתה לא רוצה להשאיר את מצב הוולידציה אחרי שליחה מוצלחת
-    form.classList.remove('was-validated');
+    e.preventDefault()
+    form.classList.add('was-validated')
+    return
   }
-});
 
-// אופציונלי: אם משתמש מתחיל לתקן אחרי שכבר הופיעו שגיאות,
-// הדפדפן מעדכן :invalid בזמן אמת, אז אין חובה לקוד נוסף.
-// אם תרצה בכל זאת "לגעת":
-form.addEventListener('input', (ev) => {
-  if (form.classList.contains('was-validated')) {
-    ev.target.checkValidity(); // לא חובה, אבל בסדר
-  }
-});
+  e.preventDefault()
+
+  form.classList.remove('was-validated')
+  form.reset()
+  showToast(3200)
+})
