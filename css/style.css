@@ -42,7 +42,7 @@ input[type='checkbox']:focus-visible {
   background-color: var(--white);
   max-width: 736px;
   height: 783px;
-  margin: var(--space-500) auto 0;
+  margin: var(--space-400) auto;
   padding: var(--space-500);
   border-radius: 16px;
 }
