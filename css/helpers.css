@@ -18,6 +18,10 @@
 .mb-500 {
     margin-bottom: var(--space-500);
 }
+
+.mt-300 {
+    margin-top: var(--space-300);
+}
 .mt-500 {
     margin-top: var(--space-500);
 }

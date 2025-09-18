@@ -10,20 +10,31 @@
     <main>
       <div class="main-card">
         <h1 id="contact-title">Contact Us</h1>
-        <form id="contact-form" method="post" aria-labelledby="contact-title">
 
-          <div class="contact-name flex-row mb-300">
-            <div class="flex-column">
-              <label for="first-name" class="name gap-100"
-                >First Name<span>*</span></label
-              >
+        <form
+          id="contact-form"
+          method="post"
+          aria-labelledby="contact-title"
+          novalidate
+        >
+          <div class="contact-name flex-row">
+            <div class="flex-column field">
+              <label for="first-name" class="name gap-100">
+                First Name <span class="req" aria-hidden="true">*</span>
+              </label>
+
               <input
-                autocomplete="given-name"
-                class="contact-text"
-                type="text"
                 id="first-name"
                 name="firstName"
+                type="text"
+                autocomplete="given-name"
+                required
+                aria-describedby="first-name-error"
               />
+
+              <p id="first-name-error" class="field__error" role="alert">
+                This field is required
+              </p>
             </div>
 
             <div class="flex-column">
@@ -31,15 +42,21 @@
                 >Last Name <span>*</span></label
               >
               <input
-                class="contact-text"
-                type="text"
                 id="last-name"
                 name="lastName"
+                type="text"
+                autocomplete="given-name"
+                required
+                aria-describedby="last-name-error"
               />
+
+              <p id="last-name-error" class="field__error" role="alert">
+                This field is required
+              </p>
             </div>
           </div>
 
-          <div class="contact-email flex-column mb-300">
+          <div class="contact-email flex-column mb-300 mt-300">
             <label class="email gap-100" for="email"
               >Email Address <span>*</span></label
             >
@@ -49,29 +66,42 @@
               id="email"
               name="email"
               type="email"
-              autocomplete="email"
+              autocomplete="given-email"
+              required
+              aria-describedby="email-error"
             />
+            <p id="email-error" class="field__error" role="alert">
+              Pleas enter a vaild email address
+            </p>
           </div>
 
-          <div class="contact-query flex-column mb-300">
-            <label class="query gap-100">Query Type <span>*</span></label>
-
+          <div class="contact-query mb-300">
+            <label class="query gap-100"
+              >Query Type <span class="req">*</span></label
+            >
             <div class="options">
               <input
-                type="radio"
                 id="query-general"
                 name="queryType"
+                type="radio"
                 value="general"
+                required
+                aria-describedby="query-error"
               />
               <label for="query-general" class="pill">General Enquiry</label>
 
               <input
-                type="radio"
                 id="query-support"
                 name="queryType"
+                type="radio"
                 value="support"
+                aria-describedby="query-error"
               />
               <label for="query-support" class="pill">Support Request</label>
+
+              <p id="query-error" class="field__error" role="alert">
+                Please select a query type
+              </p>
             </div>
           </div>
 
@@ -84,14 +114,31 @@
               name="message"
               rows="6"
               class="message"
+              autocomplete="off"
+              required
+              aria-describedby="message-error"
             ></textarea>
+
+            <p id="first-name-error" class="field__error" role="alert">
+              This field is required
+            </p>
           </div>
 
-          <div class="contact-cheackbox mb-500 mt-500">
-            <input type="checkbox" name="" id="" />
+          <div class="contact-cheackbox mb-500">
+            <input
+              id="checkbox"
+              name="checkbox"
+              type="checkbox"
+              aria-describedby="checkbox-error"
+              required
+            />
             <label class="label-checkbox"
               >I consent to being contacted by the team <span>*</span></label
             >
+
+            <p id="checkbox-error" class="field__error" role="alert">
+              To submit this form, pleas consent to being contacted
+            </p>
           </div>
 
           <div class="contact-submit">

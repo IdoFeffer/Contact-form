@@ -42,13 +42,12 @@ textarea:focus-visible {
 .label-message,
 .query {
   display: inline-flex;
-  margin-bottom: 8px;
+  margin-bottom: var(--space-100);
 }
 
 .contact-text {
   line-height: var(--body-sm-line-height);
   width: 100%;
-  height: 45px;
   border-radius: 8px;
 }
 
@@ -57,7 +56,6 @@ textarea:focus-visible {
 }
 
 .contact-email {
-  height: 60px;
   border-radius: 8px;
   width: 100%;
 }
@@ -67,7 +65,6 @@ textarea:focus-visible {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-300);
 }
-
 
 /* query  */
 
@@ -85,40 +82,37 @@ textarea:focus-visible {
 }
 
 .pill {
-  display: flex;           /* במקום inline-flex */
+  display: flex;
   width: 100%;
   align-items: center;
   gap: var(--space-200);
   min-height: 51px;
   padding: 0 var(--space-300);
   box-sizing: border-box;
-  border: 1px solid hsl(186 15% 59% / .45);
+  border: 1px solid hsl(186 15% 59% / 0.45);
   border-radius: 8px;
   background: var(--white);
   color: var(--grey-900);
   cursor: pointer;
-  transition: background .15s, border-color .15s;
+  transition: background 0.15s, border-color 0.15s;
 }
-
-.options {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* שווה-שווה */
-  gap: var(--space-500);
-  width: 100%;
-}
-
-/* האיקון שיהיה עיגול ולא אליפסה */
 .pill::before {
-  content: "";
+  content: '';
   inline-size: 18px;
   block-size: 18px;
-  border: 2px solid hsl(186 15% 59% / .9);
+  border: 2px solid hsl(186 15% 59% / 0.9);
   border-radius: 50%;
   box-sizing: border-box;
   flex: 0 0 auto;
 }
 
-/* נבחר */
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--space-500);
+  width: 100%;
+}
+
 .options input[type='radio']:checked + .pill {
   border-color: var(--green-600);
   background: rgba(12, 125, 105, 0.12);
@@ -128,17 +122,9 @@ textarea:focus-visible {
   background: radial-gradient(var(--green-600) 45%, transparent 46%);
 }
 
-/* פוקוס מקלדת על הפיל */
 .options input[type='radio']:focus-visible + .pill {
   outline: 2px solid var(--green-600);
   outline-offset: 2px;
-}
-
-/* מובייל: טור אחד */
-@media (max-width: 640px) {
-  .options {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* message  */
@@ -169,6 +155,32 @@ textarea:focus-visible {
   background-color: var(--grey-900);
 }
 
+/* ---------------------------------  */
+/* Error message  */
+
+.field__error {
+  display: none;
+  color: var(--red-500);
+  margin-top: var(--space-100);
+  margin-bottom: var(--space-300);
+}
+
+.was-validated input:invalid,
+.was-validated textarea:invalid {
+  border-color: var(--red-500);
+  box-shadow: 0 0 0 1px var(--red-500) inset;
+}
+/* לא לצבוע checkbox/radio באדום */
+form.was-validated input:is([type='checkbox'], [type='radio']):invalid {
+  border-color: initial;
+  box-shadow: none;
+}
+
+.was-validated input:invalid ~ .field__error,
+.was-validated textarea:invalid ~ .field__error {
+  display: block;
+}
+
 /* ///////////////////////////////////////////////////////////////*/
 
 @media (max-width: 640px) {
@@ -187,8 +199,8 @@ textarea:focus-visible {
     gap: var(--space-200);
   }
 
-  input[type="text"],
-  input[type="email"],
+  input[type='text'],
+  input[type='email'],
   textarea {
     width: 100%;
     font-size: 16px;
@@ -201,11 +213,11 @@ textarea:focus-visible {
   .pill {
     width: 100%;
     min-height: 48px;
-    justify-content: flex-start; 
+    justify-content: flex-start;
   }
 
   .message {
-    min-height: 120px; 
+    min-height: 120px;
   }
 
   .contact-cheackbox {
